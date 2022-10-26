@@ -18,6 +18,8 @@ Build the container:
 docker build -t dockerssh .
 ```
 
+Build time should be around 1 minute.
+
 Run the container. You will need to provide the directory where your git SSH key resides and your git credentials.
 
 (Security note: If you do not trust this software, you can put the keys outside of your system's default SSH key directory and/or use an internal git account.)
@@ -26,7 +28,7 @@ Run the container. You will need to provide the directory where your git SSH key
 docker run -it -v <ssh key location>:/home/user/.ssh -e gitemail="<git email>" -e gitusername="git username" dockerssh
 ```
 
-The program will then ask for the SSH link to the repository to be merged and then the names of the branches that will vote (separated by spaces).
+The program will then ask for the git SSH link to the repository to be merged and then the names of the branches that will vote (separated by spaces).
 
 The result will be pushed to the `main` branch of the repository once the process finishes.
 
@@ -53,3 +55,7 @@ If multiple files should be merged, add them to the top level list. The fields a
 #### Sample repository ####
 
 You can fork [this public repository](https://github.com/EcePanos/bench2000) as an example to test this without setting up a dataset. It contains our dummy performance test data. Our experiments used various permutations of this dataset to test the performance of the tool in realistic network conditions.
+
+Depending on network conditions and whether the git repositories are local or remote, the process for datasets of similar size to the sample should take around 1 minute to complete.
+
+For the paper we used local or remote forks of the repository, as well as a varying number of branches. Each branch contained identical data.
