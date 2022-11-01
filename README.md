@@ -1,6 +1,6 @@
 # Data-Centric Consensus code artifacts
 
-This repository contains the code and data in order to reproduce the results, including figures, of the article: Decentralised Data Quality Control in Ground Truth Production for Autonomic Decisions, by P. Gkikopoulos, J. Spillner and V. Schiavoni, accepted for publication at IEEE TPDS - Transactions on Parallel and Distributed Systems, 2022. In particular, it contains a reference implementation for the Data-Centric Consensus (DCC) protocol that aims to raise confidence in data-driven decision making as well as data-centric AI.
+This repository contains the code and data in order to reproduce the results, including figures, of the article: Decentralised Data Quality Control in Ground Truth Production for Autonomic Decisions, by P. Gkikopoulos (Zurich University of Applied Sciences and University of Neuchâtel), J. Spillner (Zurich University of Applied Sciences) and V. Schiavoni (University of Neuchâtel), accepted for publication at IEEE TPDS - Transactions on Parallel and Distributed Systems, 2022. In particular, it contains a reference implementation for the Data-Centric Consensus (DCC) protocol that aims to raise confidence in data-driven decision making as well as data-centric AI.
 
 The code is maintained through Git by Zurich University of Applied Sciences and University of Neuchâtel, with future improvements to the voting/DCC algorithm expected, while the snapshot relevant for the article is also long-term archived on Zenodo.
 
