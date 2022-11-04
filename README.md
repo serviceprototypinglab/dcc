@@ -5,6 +5,7 @@ This repository contains the code and data in order to reproduce the results, in
 The code is maintained through Git by Zurich University of Applied Sciences and University of Neuchâtel, with future improvements to the voting/DCC algorithm expected, while the snapshot relevant for the article is also long-term archived on Zenodo.
 
 The archived version on Zenodo is available at: https://doi.org/10.5281/zenodo.5835875
+The collaboratively maintained code repository is at: https://github.com/serviceprototypinglab/dcc
 
 All results are contained in the following two directories:
 
