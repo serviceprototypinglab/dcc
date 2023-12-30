@@ -77,7 +77,7 @@ def buildrepo(nentries, npop, nprops, sprops):
     branches = " ".join(branches)
 
     t0 = time.time()
-    os.system(f"docker run -it -v {repodir}:/tmp/repo -e dsname=/tmp/repo -e dsbranches='{branches}' dockerssh")
+    os.system(f"docker run --rm -it -v {repodir}:/tmp/repo -e dsname=/tmp/repo -e dsbranches='{branches}' dockerssh")
     tdiff = round(time.time() - t0, 2)
 
     os.system("git restore --staged .")

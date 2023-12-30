@@ -2,6 +2,8 @@
 
 This containerised consensus implementation will merge multiple branches of an input dataset that is implemented as a distributed Git repository into a ground truth branch. The input branches could represent independent observations, not directly suitable for follow-up decision making, whereas the ground truth would allow for simplified follow-up activities as part of a larger data-centric acquisition and decision pipeline.
 
+Of primary interest is the performance of the implementation. The subdirectory `generator` is dedicated to that but requires the container image to be available at first.
+
 ## Instructions ##
 
 #### Pre-requisites ####
@@ -20,12 +22,14 @@ docker build -t dockerssh .
 
 Build time should be around 1-3 minutes on a contemporary researcher notebook or workstation, depending on the network bandwidth required for package downloads during the build process. No special hardware or infrastructure is necessary. The resulting image requires around 700 MB disk space.
 
-Run the container. The parameterisation can be a mix of environment variables and interactive inputs. You will need to provide upfront either the directory where your remote Git SSH key resides or a local Git repository path. Moreover, you should specify the desired Git identity for producing the ground truth branch, although a reasonable default value (dcc@none) is used by default.
+Run the container through automated performance experiments. If this is desired, stop reading here and proceed into the `generator` subdirectory which has two scripts, `python gen.py` to run the experiment in an automated way and `python plot_entry.py` to visualise the results.
+
+Run the container manually. The parameterisation can be a mix of environment variables and interactive inputs. You will need to provide upfront either the directory where your remote Git SSH key resides or a local Git repository path. Moreover, you should specify the desired Git identity for producing the ground truth branch, although a reasonable default value (dcc@none) is used by default.
 
 (Security note: If you do not trust this software, you can put the keys outside of your system's default SSH key directory and/or use an internal Git account.)
 
 ```
-docker run -it \
+docker run --rm -it \
   [-v <ssh key location>:/home/user/.ssh] \
   [-v <localrepository>:<containerrepopath>] \
   [-e gitemail="<git email>" -e gitusername="git username"] \
