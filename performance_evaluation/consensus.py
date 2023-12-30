@@ -28,8 +28,13 @@ def branch_retrieve(dataset, branches):
 
 # Interactive input for testing
 if __name__ == '__main__':
-    dataset = input("Set name of dataset: ")
-    branches = [item for item in input("Enter the branch names: ").split()]
+    dataset = os.getenv("dsname")
+    if not dataset:
+        dataset = input("Set name of dataset: ")
+    dsbranches = os.getenv("dsbranches")
+    if not dsbranches:
+        dsbranches = input("Enter the branch names: ")
+    branches = dsbranches.split()
     #dataset = "git@github.com:EcePanos/ref_2.git"
     #branches = ['node1', 'node2', 'node3']
     branch_retrieve(dataset, branches)

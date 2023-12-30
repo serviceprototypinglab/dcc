@@ -91,4 +91,6 @@ fig.delaxes(axs[1][2])
 #plt.plot(x2, y7, x2, y8, x2, y9)
 #plt.plot(x2, y10, x2, y11, x2, y12)
 """
-plt.show()
+# plt.show()
+fig.set_size_inches(13.08*2, 2.6*2)
+fig.savefig("plot.pdf")
