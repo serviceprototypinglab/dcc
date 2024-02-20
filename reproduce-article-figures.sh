@@ -4,12 +4,13 @@
 
 cd error_injection_experiment
 python -m venv experiment
-experiment/bin/pip install -r requirements.txt
-experiment/bin/python test.py
-experiment/bin/python plot.py
+source experiment/bin/activate
+pip install -r requirements.txt
+python test.py
+python plot.py
 cp plot.pdf ../fig7-plot.pdf
 rm *.csv *.pdf
-rm -rf experiment/
+# rm -rf experiment/
 cd ..
 
 # Reproduce Fig. 6 (approximate reproduction)

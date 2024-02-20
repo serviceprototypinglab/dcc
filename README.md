@@ -29,6 +29,8 @@ In total, around 1 GB of disk space is needed to set up the container image and 
 
 The assumption is that Linux environment from around 2020-23 is used. The code has been tested in particular on Ubuntu 20.10 (groovy; although the containerised performance experiment uses an older base image) and on Debian 12 (bookworm). All Python packages are installed through Pip so that only few system packages are required (python3-pip python3-virtualenv docker.io).
 
+Ensure that the python command is available in the system path and points to python3.
+
 Other than the software setup, no further dependencies exist. All required data files are included or synthetically generated. However, for the full experiment as described in the paper, a networked environment with distributed Git repositories across SSH accounts would have to be set up manually.
 
 ## Setup and Cleanup
